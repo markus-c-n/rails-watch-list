@@ -1,14 +1,31 @@
+
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1485095329183-d0797cdc5676?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);">
+  <div class="container">
+    <h1>Create Playlists</h1>
+    <h2>Add your movies</h2>
+    <%= link_to "New", new_list_path, class:"btn btn-secondary btn-lg" %>
+    <%#= link_to "Add a Monster", new_haunted_house_monster_path(@haunted_house), class: 'btn btn-danger mt-2'  %>
+  </div>
+</div>
+
+
 <div class="container">
-  <h1>Your Lists</h1>
-  <%= link_to "New", new_list_path, class:"btn btn-secondary" %>
+  <h1 class="text-center m-5">Your Lists</h1>
 
   <ul>
-    <% @lists.each do |list| %>
-      <div class="card m-3">
-        <div class="card-body">
-          <li style="list-style: none;"> <%= link_to list.name, list_path(list) %></li>
+    <div class="container">
+    <div class="row text-center">
+     <% @lists.each do |list| %>
+      <div class="card-pick col-lg-3 m-2">
+        <img src="image.jpg" alt="">
+        <div class="card-pick-info">
+          <h2><%= link_to list.name, list_path(list) %></h2>
+          <p>Category Date</p>
         </div>
       </div>
     <% end %>
+    </div>
+    </div>
   </ul>
 </div>
