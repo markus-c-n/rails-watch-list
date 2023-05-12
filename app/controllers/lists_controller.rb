@@ -15,6 +15,12 @@ class ListsController < ApplicationController
     @list = List.new
   end
 
+  def destroy
+    @list = List.find(params[:id])
+    @list.delete
+    redirect_to lists_path, status: :see_other
+  end
+
   def create
     @list = List.new(list_params)
     if @list.save

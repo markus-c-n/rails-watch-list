@@ -2,9 +2,8 @@
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1485095329183-d0797cdc5676?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);">
   <div class="container">
-    <h1>Create Playlists</h1>
-    <h2>Add your movies</h2>
-    <%= link_to "New", new_list_path, class:"btn btn-secondary btn-lg" %>
+    <h1>Create Your Playlists</h1>
+    <%= link_to "New", new_list_path, class:"btn btn-danger btn-lg mt-5" %>
     <%#= link_to "Add a Monster", new_haunted_house_monster_path(@haunted_house), class: 'btn btn-danger mt-2'  %>
   </div>
 </div>
@@ -22,6 +21,9 @@
         <div class="card-pick-info">
           <h2><%= link_to list.name, list_path(list), class:"text-decoration-none text-danger" %></h2>
           <p>Category Date</p>
+          <%= link_to list_path(list), class: "btn delete-movie delete-btn btn-secondary", data: { turbo_method: :delete, turbo_confirm: "Delete #{list.name}?" } do%>
+          <i class="fa-solid fa-trash"></i>
+          <% end %>
         </div>
       </div>
     <% end %>

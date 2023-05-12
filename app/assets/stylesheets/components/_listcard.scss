@@ -1,6 +1,7 @@
 /*Card pick*/
 .card-pick {
   /*fixed*/
+  position: relative;
   display: flex;
   flex-direction: column;
   /*customizable*/
@@ -32,4 +33,11 @@
   transition: 0.2s ease-out;
   transform: translateY(-8px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.delete-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+
 }
