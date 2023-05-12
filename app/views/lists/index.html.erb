@@ -18,7 +18,7 @@
     <div class="row text-center">
      <% @lists.each do |list| %>
       <div class="card-pick col-lg-3 m-2">
-        <img src="image.jpg" alt="">
+        <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
         <div class="card-pick-info">
           <h2><%= link_to list.name, list_path(list) %></h2>
           <p>Category Date</p>
