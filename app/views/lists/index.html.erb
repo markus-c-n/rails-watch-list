@@ -18,9 +18,9 @@
     <div class="row text-center">
      <% @lists.each do |list| %>
       <div class="card-pick col-lg-3 m-2">
-        <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
+        <div class="mt-2"><%= list.photo.attached? ? cl_image_tag(list.photo.key) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %></div>
         <div class="card-pick-info">
-          <h2><%= link_to list.name, list_path(list) %></h2>
+          <h2><%= link_to list.name, list_path(list), class:"text-decoration-none text-danger" %></h2>
           <p>Category Date</p>
         </div>
       </div>
