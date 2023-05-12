@@ -5,3 +5,8 @@ export default class extends Controller {
     this.element.textContent = "Hello World!"
   }
 }
+
+document.querySelector(".card-hello img")
+    .addEventListener("click", (event) => {
+      event.currentTarget.classList.toggle("tapped");
+    });
